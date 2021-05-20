@@ -1,7 +1,7 @@
 import React from "react";
 
 const Dashboard = () => {
-  return <>This is Dashboard page</>;
+  return <>Welcome to your private and protected Dashboard page</>;
 };
 
 export default Dashboard;

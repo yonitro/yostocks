@@ -156,7 +156,7 @@ router.delete("/:scriplistID", (req, res, next) => {
 // Search ScripList
 router.get("/search/:name", (req, res, next) => {
   var regex = new RegExp(req.params.name, "i");
-  ScripList.find({ scripname: regex })
+  ScripList.find({ scripname: regex }).sort({ scripname: 'ascending' })
     .exec()
     .then((result) => {
       res.status(200).json({ result });

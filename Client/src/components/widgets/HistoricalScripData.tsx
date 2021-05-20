@@ -82,9 +82,9 @@ const HistoricalScripData = () => {
     });
   };
   initCanvas();
-  const handleClick = () => {
+  const handleClick = (getdate) => {    
     inStockDateFilter({
-      date: new Date("2018-12-24"),
+      date: new Date(getdate),
       comparator: Comparator.GT,
     });
   };
@@ -96,6 +96,18 @@ const HistoricalScripData = () => {
           {" "}
           1M{" "}
         </button> */}
+        <div className="app-row">
+        <div className="col-md-5">
+      <ul className="dayslisting">
+        <li><a href="#" data-val="1D" onClick={(d)=>{handleClick('2021-05-11')}}>1D</a></li>
+        <li><a href="#" data-val="1W" onClick={(d)=>{handleClick('2021-05-06')}}>1W</a></li>
+        <li><a href="#" data-val="1M" onClick={(d)=>{handleClick('2021-05-04')}}>1M</a></li>
+        <li><a href="#" data-val="3M" onClick={(d)=>{handleClick('2021-02-13')}}>3M</a></li>
+        <li><a href="#" data-val="6M" onClick={(d)=>{handleClick('2020-12-13')}}>6M</a></li>
+        <li><a href="#" data-val="1Y" onClick={(d)=>{handleClick('2020-05-13')}}>1Y</a></li>
+      </ul>
+    </div>
+        </div>
         <BootstrapTable
           keyField="id"
           data={scrip.candlestickpattern}
